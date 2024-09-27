@@ -3,6 +3,7 @@ import './App.css';
 import Hireme from './Components/Hireme';
 import Landing from './Components/Landing';
 import Navbar from './Components/Navbar';
+import About from './Components/About';
 function App() {
   useEffect(() => {
     const preventHorizontalScroll = (e) => {
@@ -34,6 +35,8 @@ function App() {
       <Navbar/>
       <Landing/>
       <Hireme/>
+      <About/>
+      
     </>
   )
 }
