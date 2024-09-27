@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import './Landing.css';
 
 const Landing = () => {
   const mountRef = useRef(null);
