@@ -6,6 +6,120 @@
     padding: 4rem 1rem;
 }
 
+.Profle-image {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .Profle-image img {
+    width: 100%;
+    max-width: 250px; /* Set a max width for the image */
+    height: auto;
+    border-radius: 50%; /* Circular image style */
+    object-fit: cover;
+  }
+
+
+.button {
+    --background: #2B3044;
+    --background-hover: #1E2235;
+    --text: #fff;
+    --icon: #fff;
+    --particle: #fff;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    min-width: 113px;
+    padding: 8px 20px 8px 12px;
+    border-radius: 11px;
+    line-height: 24px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--b, var(--background));
+    transition: transform .3s, background .4s;
+    transform: scale(var(--scale, 1)) translateZ(0);
+    &:active {
+        --scale: .95;
+    }
+    &:hover {
+        --b: var(--background-hover);
+    }
+    .icon {
+        --arrow-y: 0;
+        --arrow-rotate: 135;
+        --arrow-top: 10px;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 8px;
+        pointer-events: none;
+        .dot {
+            border-radius: 50%;
+            background: #fff;
+            background: var(--particle);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 4px;
+        }
+        .arrow,
+        .line {
+            position: absolute;
+            z-index: 1;
+        }
+        .arrow {
+            left: 11px;
+            top: 4px;
+            width: 2px;
+            height: 12px;
+            border-radius: 1px;
+            background: var(--icon);
+            transform: translateY(calc(var(--arrow-y) * 1px)) translateZ(0);
+            &:before,
+            &:after {
+                content: '';
+                width: 2px;
+                height: 7px;
+                position: absolute;
+                left: 0;
+                top: var(--arrow-top);
+                border-radius: 1px;
+                background: inherit;
+                transform-origin: 1px 1px;
+                transform: rotate(var(--r, calc(var(--arrow-rotate) * 1deg)));
+            }
+            &:after {
+                --r: calc(var(--arrow-rotate) * -1deg);
+            }
+        }
+        .line {
+            width: 24px;
+            height: 24px;
+            display: block;
+            left: 0;
+            top: 7px;
+            fill: none;
+            stroke: var(--icon);
+            stroke-width: 2;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+    }
+    &.upload {
+        .icon {
+            --arrow-rotate: 45;
+            --arrow-top: 0;
+        }
+    }
+}
+
+
 
 .about h2 {
     position: relative;
@@ -17,19 +131,29 @@
 
 .about-content {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.Profile-image {
+   
+}
+
+.Profile-image img {
+    width: 100%;
+    max-width: fit-content;
 }
 
 .about-text {
-    flex: 1;
+    flex: 2;
     text-align: center;
 }
 
 .job-titl {
-    color: #a3a533ce;
+    color: #b9bb32f3;
 }
 
 
@@ -55,23 +179,26 @@
         justify-content: space-between;
         align-items: flex-start;
     }
+    .button{
+        align-content: center;
+    }
+
+    .Profile-image {
+        align-items: center;
+        margin-bottom: 0;
+        margin-right: 2rem;
+    }
 
     .about-text {
         text-align: left;
-        margin-right: 2rem;
-        flex: 2;
-    }
-
-    .profile-image {
-        flex: 1;
-        margin-bottom: 0;
-        margin-left: 2rem;
-        max-width: 250px;
     }
 }
 
 @media (min-width: 1024px) {
     .profile-image {
         max-width: 300px;
+    }
+    .button{
+        align-content: center;
     }
 }

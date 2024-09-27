@@ -28,26 +28,34 @@ const About = () => {
 
     return () => clearInterval(typingInterval);
   }, [titleIndex]);
-    
+
   return (
     <section className="about">
       <h2>About Me</h2>
+      
       <div className="about-content">
-        <div>
-            <img src="" alt="/workspaces/Portfolio-website/Portfolio/src/assets/profile.jpg"  srcset="" />
+      <div className="Profle-image">
+          <img src="https://i.ibb.co/0htsPWG/Whats-App-Image-2024-08-01-at-15-44-32-369b04ae.jpg" alt="Image" srcset="" />
         </div>
         <div className="about-text">
           <h3>I'm a <span className="job-titl">{displayedTitle}</span></h3>
           <p>
             I am ambitious and driven, constantly seeking out challenges and
-            setting goals to push myself toward excellence. Settling for the 
-            ordinary isn't in my nature—I'm always looking 
+            setting goals to push myself toward excellence. Settling for the
+            ordinary isn't in my nature—I'm always looking
             for ways to improve and achieve more. As a tech enthusiast,
             I'm committed to expanding my technical skills and
-            building innovative, reliable solutions that simplify 
+            building innovative, reliable solutions that simplify
             everyday life. I'm also excited about collaborating on impactful
             projects that address real-world challenges and vulnerabilities.
           </p>
+          <button class="button" >
+            <div class="icon">
+              <div class="arrow"></div>
+              <svg class="line" viewBox="0 0 24 24"></svg>
+            </div>
+            &#68;ownload CV
+          </button>
         </div>
       </div>
     </section>
