@@ -31,7 +31,7 @@ const About = () => {
 
   const handleDownloadCV = () => {
     // const pdfUrl = 'https://drive.google.com/file/d/1y6E8rzpqHgUUJL7ZF8nKA3orIxNr6wTB/view?usp=drive_link';
-    const pdfUrl = '/workspaces/Portfolio-website/CV-Vishal.pdf';
+    const pdfUrl = '/workspaces/Portfolio-website/Portfolio/public/CV-Vishal.pdf';
 
     const link = document.createElement('a');
     link.href = pdfUrl;
