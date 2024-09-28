@@ -59,8 +59,8 @@ h2 {
 }
 
 .hire-me-container .hire-me-button:hover {
-    background-color: #D392E0;
-    color: whitesmoke;
+    background-color: #9f22b8a4;
+    color: rgba(245, 245, 245, 0.87);
     transform: translateY(-2px);  /* Slight lift effect on hover */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);  /* Increased shadow on hover */
 }

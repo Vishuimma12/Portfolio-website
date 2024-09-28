@@ -9,14 +9,15 @@
 .Profle-image {
     flex: 1;
     margin-bottom: 2rem;
+    margin-right: 50px;
+    margin-top: auto;
   }
   
   .Profle-image img {
-    width: 100%;
-    max-width: 250px; /* Set a max width for the image */
-    height: auto;
-    border-radius: 50%; /* Circular image style */
-    object-fit: cover;
+    width: 100%; /* Set a fixed width */
+    height: 100%; /* Set a fixed height to match the width */
+    border-radius: 50%; /* Maintain circular image style */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
   }
 
 
@@ -138,18 +139,10 @@
     padding: 0 1rem;
 }
 
-.Profile-image {
-   
-}
-
-.Profile-image img {
-    width: 100%;
-    max-width: fit-content;
-}
-
 .about-text {
     flex: 2;
     text-align: center;
+    margin-right: 20px;
 }
 
 .job-titl {
@@ -186,7 +179,7 @@
     .Profile-image {
         align-items: center;
         margin-bottom: 0;
-        margin-right: 2rem;
+        
     }
 
     .about-text {

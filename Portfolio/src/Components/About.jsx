@@ -9,7 +9,7 @@ const About = () => {
     'Competitive Programmer.',
     'wanna be Fullstack Web Developer.'
   ];
-
+//https://drive.google.com/file/d/1y6E8rzpqHgUUJL7ZF8nKA3orIxNr6wTB/view?usp=drive_link
   useEffect(() => {
     const title = titles[titleIndex];
     let charIndex = 0;
@@ -28,6 +28,18 @@ const About = () => {
 
     return () => clearInterval(typingInterval);
   }, [titleIndex]);
+
+  const handleDownloadCV = () => {
+    // const pdfUrl = 'https://drive.google.com/file/d/1y6E8rzpqHgUUJL7ZF8nKA3orIxNr6wTB/view?usp=drive_link';
+    const pdfUrl = '/workspaces/Portfolio-website/CV-Vishal.pdf';
+
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'CV-Vishal.pdf'; // Replace with your desired file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="about">
@@ -49,7 +61,7 @@ const About = () => {
             everyday life. I'm also excited about collaborating on impactful
             projects that address real-world challenges and vulnerabilities.
           </p>
-          <button class="button" >
+          <button class="button" onClick={handleDownloadCV}>
             <div class="icon">
               <div class="arrow"></div>
               <svg class="line" viewBox="0 0 24 24"></svg>
