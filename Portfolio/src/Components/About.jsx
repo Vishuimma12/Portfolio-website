@@ -41,7 +41,7 @@ const About = () => {
 
       <div className="about-content">
         <div className="Profle-image">
-          <img src="https://i.ibb.co/0htsPWG/Whats-App-Image-2024-08-01-at-15-44-32-369b04ae.jpg" alt="Image" srcset="" />
+          <img src="https://i.ibb.co/0htsPWG/Whats-App-Image-2024-08-01-at-15-44-32-369b04ae.jpg" alt="Image"  />
         </div>
         <div className="about-text">
           <h3>I'm a <span className="job-titl">{displayedTitle}</span></h3>
@@ -55,10 +55,10 @@ const About = () => {
             everyday life. I'm also excited about collaborating on impactful
             projects that address real-world challenges and vulnerabilities.
           </p>
-          <button class="button" onClick={handleDownloadCV}>
-            <div class="icon">
-              <div class="arrow"></div>
-              <svg class="line" viewBox="0 0 24 24"></svg>
+          <button className="button" onClick={handleDownloadCV}>
+            <div className="icon">
+              <div className="arrow"></div>
+              <svg className="line" viewBox="0 0 24 24"></svg>
             </div>
             &#68;ownload CV
           </button>
