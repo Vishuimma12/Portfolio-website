@@ -3,23 +3,38 @@
     width: 100%;
     background-color: rgba(4, 4, 14, 0.8);
     color: #fff;
-    padding: 4rem 1rem;
+    padding: 4rem 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem; 
 }
 
 .Profle-image {
     flex: 1;
     margin-bottom: 2rem;
-    margin-right: 50px;
-    margin-top: auto;
-  }
-  
-  .Profle-image img {
-    width: 100%; /* Set a fixed width */
-    height: 100%; /* Set a fixed height to match the width */
-    border-radius: 50%; /* Maintain circular image style */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-  }
+    max-width: 300px; 
+    width: 100%; 
+}
 
+.Profle-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 2;
+    text-align: center;
+    max-width: 800px; 
+    width: 100%;
+}
 
 .button {
     --background: #2B3044;
@@ -120,8 +135,6 @@
     }
 }
 
-
-
 .about h2 {
     position: relative;
     text-align: center;
@@ -130,31 +143,15 @@
     color: #6dd1f8;
 }
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.about-text {
-    flex: 2;
-    text-align: center;
-    margin-right: 20px;
-}
-
 .job-titl {
     color: #b9bb32f3;
 }
-
 
 .about-text h3 {
     font-size: 1.8rem;
     margin-bottom: 3rem;
     color: #8a8982;
-    min-height: 2.7rem; /* Ensures consistent height during text change */
+    min-height: 2.7rem;
 }
 
 .about-text p {
@@ -166,32 +163,137 @@
 }
 
 
-@media (min-width: 768px) {
+.card-education {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+}
+
+.tenth-education {
+    width: 100%; 
+    max-width: 300px;
+    height: 150px;
+    background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+
+.tenth-education:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4); 
+}
+
+
+.tenth-education::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.tenth-education:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Profle-image {
+        margin-right: 0;
+    }
+
+    .about-text {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .card-education {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tenth-education {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
     .about-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
     }
-    .button{
-        align-content: center;
-    }
 
-    .Profile-image {
-        align-items: center;
+    .Profle-image {
+        margin-right: 2rem;
         margin-bottom: 0;
-        
     }
 
     .about-text {
         text-align: left;
     }
+
+    .card-education {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tenth-education {
+        width: calc(50% - 1rem);
+    }
 }
 
 @media (min-width: 1024px) {
-    .profile-image {
-        max-width: 300px;
+    .about-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
     }
-    .button{
-        align-content: center;
+
+    .Profle-image {
+        margin-right: 3rem;
     }
+
+    .about-text {
+        text-align: left;
+        margin-right: 0;
+    }
+
+    .card-education {
+        justify-content: space-between;
+    }
+
+    .tenth-education {
+        width: calc(33.33% - 1rem);
+    }
+}
+
+
+.button {
+    margin: 1rem auto;
+    display: block;
 }

@@ -9,7 +9,6 @@ const About = () => {
     'Competitive Programmer.',
     'wanna be Fullstack Web Developer.'
   ];
-//https://drive.google.com/file/d/1y6E8rzpqHgUUJL7ZF8nKA3orIxNr6wTB/view?usp=drive_link
   useEffect(() => {
     const title = titles[titleIndex];
     let charIndex = 0;
@@ -30,23 +29,18 @@ const About = () => {
   }, [titleIndex]);
 
   const handleDownloadCV = () => {
-    // const pdfUrl = 'https://drive.google.com/file/d/1y6E8rzpqHgUUJL7ZF8nKA3orIxNr6wTB/view?usp=drive_link';
-    const pdfUrl = '/workspaces/Portfolio-website/Portfolio/public/CV-Vishal.pdf';
-
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'CV-Vishal.pdf'; // Replace with your desired file name
-    document.body.appendChild(link);
+    const link = document.createElement("a");
+    link.href = "/CV-Vishal.pdf";
+    link.download = "CV-Vishal.pdf";
     link.click();
-    document.body.removeChild(link);
   };
 
   return (
     <section className="about">
       <h2>About Me</h2>
-      
+
       <div className="about-content">
-      <div className="Profle-image">
+        <div className="Profle-image">
           <img src="https://i.ibb.co/0htsPWG/Whats-App-Image-2024-08-01-at-15-44-32-369b04ae.jpg" alt="Image" srcset="" />
         </div>
         <div className="about-text">
@@ -69,7 +63,21 @@ const About = () => {
             &#68;ownload CV
           </button>
         </div>
+        
       </div>
+      <h2>Education</h2>
+      <div className='card-education'>
+        <div className='tenth-education'>
+
+        </div>
+        <div className='tenth-education'>
+
+        </div>
+        <div className='tenth-education'>
+
+        </div>
+      </div>
+      
     </section>
   );
 };
