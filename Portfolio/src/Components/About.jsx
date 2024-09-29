@@ -68,13 +68,22 @@ const About = () => {
       <h2>Education</h2>
       <div className='card-education'>
         <div className='tenth-education'>
-
+        <h3>Bachelor of Computer Applications</h3>
+          <p>Chandigarh University, Punjab 
+           <br /> 2021 - 2024
+          </p>
         </div>
         <div className='tenth-education'>
-
+          <h3>Senior Secondary(Class XII) - PCM </h3>
+          <p>Lord Mahavir Jain Public School, Punjab
+            <br />2020 - 2021
+          </p>
         </div>
         <div className='tenth-education'>
-
+          <h3>Secondary School Education (Class X)</h3>
+          <p>Sun Flower Public School, Uttar Pradash 
+           <br /> 2018 - 2019
+          </p>
         </div>
       </div>
       

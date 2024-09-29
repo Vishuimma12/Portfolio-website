@@ -189,7 +189,57 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     overflow: hidden;
     margin-bottom: 2rem;
+    text-align: center;
 }
+.tenth-education h3 {
+    position:initial;
+    color: #adabab;
+    font-size: 1.4rem; /* Increased font size for more prominence */
+    font-weight: bold; /* Make it bold for impact */ /* All caps for emphasis */
+    letter-spacing: 2px; /* Slight spacing for a modern look */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+.tenth-education p {
+    margin-bottom: 10px;
+    color: #757474; /* Lighter shade for contrast */
+    font-size: 1rem; /* Increase font size for better readability */
+    font-weight: 300; /* Lighter font weight for elegance */
+    line-height: 1.5; /* Better spacing between lines */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for interactivity */
+}
+
+/* Hover effects to make the elements pop */
+.tenth-education:hover h3 {
+    color: #d3f0ff; /* Color change on hover */
+}
+
+.tenth-education:hover p {
+    color: #ffffff;
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .tenth-education h3 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .tenth-education p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tenth-education h3 {
+        font-size: 1.3rem; /* Further adjustment for very small screens */
+    }
+
+    .tenth-education p {
+        font-size: 0.9rem; /* Further adjustment for small screens */
+    }
+}
+
 
 
 .tenth-education:hover {
