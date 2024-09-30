@@ -5,6 +5,7 @@ import Hireme from './Components/Hireme';
 import Landing from './Components/Landing';
 import Navbar from './Components/Navbar';
 import Service from './Components/Service';
+
 function App() {
   useEffect(() => {
     const preventHorizontalScroll = (e) => {
