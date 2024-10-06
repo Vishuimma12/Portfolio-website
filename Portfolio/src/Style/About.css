@@ -12,14 +12,14 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem; 
+    padding: 0 2rem;
 }
 
 .Profle-image {
     flex: 1;
     margin-bottom: 2rem;
-    max-width: 300px; 
-    width: 100%; 
+    max-width: 300px;
+    width: 100%;
 }
 
 .Profle-image img {
@@ -32,7 +32,7 @@
 .about-text {
     flex: 2;
     text-align: center;
-    max-width: 800px; 
+    max-width: 800px;
     width: 100%;
 }
 
@@ -57,12 +57,15 @@
     background: var(--b, var(--background));
     transition: transform .3s, background .4s;
     transform: scale(var(--scale, 1)) translateZ(0);
+
     &:active {
         --scale: .95;
     }
+
     &:hover {
         --b: var(--background-hover);
     }
+
     .icon {
         --arrow-y: 0;
         --arrow-rotate: 135;
@@ -74,6 +77,7 @@
         vertical-align: top;
         margin-right: 8px;
         pointer-events: none;
+
         .dot {
             border-radius: 50%;
             background: #fff;
@@ -84,11 +88,13 @@
             width: 4px;
             height: 4px;
         }
+
         .arrow,
         .line {
             position: absolute;
             z-index: 1;
         }
+
         .arrow {
             left: 11px;
             top: 4px;
@@ -97,6 +103,7 @@
             border-radius: 1px;
             background: var(--icon);
             transform: translateY(calc(var(--arrow-y) * 1px)) translateZ(0);
+
             &:before,
             &:after {
                 content: '';
@@ -110,10 +117,12 @@
                 transform-origin: 1px 1px;
                 transform: rotate(var(--r, calc(var(--arrow-rotate) * 1deg)));
             }
+
             &:after {
                 --r: calc(var(--arrow-rotate) * -1deg);
             }
         }
+
         .line {
             width: 24px;
             height: 24px;
@@ -127,6 +136,7 @@
             stroke-linecap: round;
         }
     }
+
     &.upload {
         .icon {
             --arrow-rotate: 45;
@@ -173,12 +183,12 @@
 }
 
 .tenth-education {
-    width: 100%; 
+    width: 100%;
     max-width: 300px;
     height: 150px;
     background: linear-gradient(to right, rgb(20, 30, 48), rgb(36, 59, 85));
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
     color: white;
     justify-content: center;
@@ -191,60 +201,63 @@
     margin-bottom: 2rem;
     text-align: center;
 }
+
 .tenth-education h3 {
-    position:initial;
+    position: initial;
     color: #adabab;
-    font-size: 1.4rem; /* Increased font size for more prominence */
-    font-weight: bold; /* Make it bold for impact */ /* All caps for emphasis */
-    letter-spacing: 2px; /* Slight spacing for a modern look */
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out;
 }
 
 .tenth-education p {
     margin-bottom: 10px;
-    color: #757474; /* Lighter shade for contrast */
-    font-size: 1rem; /* Increase font size for better readability */
-    font-weight: 300; /* Lighter font weight for elegance */
-    line-height: 1.5; /* Better spacing between lines */
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for interactivity */
+    color: #757474;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Hover effects to make the elements pop */
+
 .tenth-education:hover h3 {
-    color: #d3f0ff; /* Color change on hover */
+    color: #d3f0ff;
 }
 
 .tenth-education:hover p {
     color: #ffffff;
-    transform: translateY(-5px); /* Slight movement on hover */
+    transform: translateY(-5px);
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     .tenth-education h3 {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        font-size: 1.5rem;
     }
 
     .tenth-education p {
-        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .tenth-education h3 {
-        font-size: 1.3rem; /* Further adjustment for very small screens */
+        font-size: 1.3rem;
+        /* Further adjustment for very small screens */
     }
 
     .tenth-education p {
-        font-size: 0.9rem; /* Further adjustment for small screens */
+        font-size: 0.9rem;
+        /* Further adjustment for small screens */
     }
 }
 
 
 
 .tenth-education:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4); 
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -255,7 +268,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     pointer-events: none;

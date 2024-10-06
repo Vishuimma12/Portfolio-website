@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './Hireme.css';
+import React, { useEffect, useState } from 'react';
+import '../Style/Hireme.css';
 
 const Hireme = () => {
   const [jobIndex, setJobIndex] = useState(0);

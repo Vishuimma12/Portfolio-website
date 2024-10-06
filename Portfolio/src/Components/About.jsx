@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './About.css';
+import '../Style/About.css';
 
 const About = () => {
   const [titleIndex, setTitleIndex] = useState(0);

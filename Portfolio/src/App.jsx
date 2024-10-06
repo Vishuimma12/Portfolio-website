@@ -10,19 +10,16 @@ function App() {
   useEffect(() => {
     const preventHorizontalScroll = (e) => {
       if (e.touches) {
-        // For touch devices
         if (e.touches.length > 1) {
           e.preventDefault();
         }
       } else {
-        // For mouse
         if (e.deltaX !== 0) {
           e.preventDefault();
         }
       }
     };
 
-    // Prevent horizontal scroll
     document.body.addEventListener('wheel', preventHorizontalScroll, { passive: false });
     document.body.addEventListener('touchmove', preventHorizontalScroll, { passive: false });
 
