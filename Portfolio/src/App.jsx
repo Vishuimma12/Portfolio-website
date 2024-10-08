@@ -6,6 +6,7 @@ import Landing from './Components/Landing';
 import Navbar from './Components/Navbar';
 import Project from './Components/Project';
 import Service from './Components/Service';
+import SkillsSection from './Components/SkillsSection';
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
       <About/>
       <Service/>
       <Project/>
+      <SkillsSection/>
       
     </>
   )
