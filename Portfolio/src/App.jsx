@@ -4,6 +4,7 @@ import About from './Components/About';
 import Hireme from './Components/Hireme';
 import Landing from './Components/Landing';
 import Navbar from './Components/Navbar';
+import Project from './Components/Project';
 import Service from './Components/Service';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Hireme/>
       <About/>
       <Service/>
+      <Project/>
       
     </>
   )
