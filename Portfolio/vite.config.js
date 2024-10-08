@@ -2,31 +2,19 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/', // Adjust this if deploying to a subpath
   plugins: [react()],
-  build: {
-    chunkSizeWarningLimit: 1000,  // Increase chunk size warning limit
-    minify: 'terser',  // Ensure terser is used for minification
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        global_defs: {
-          'process.env.NODE_ENV': '"production"'
-        },
-        pure_funcs: ['eval'],  // Suppress eval warnings
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://6705814853d3530008065616--sage-syrniki-d3509d.netlify.app', // Your deployed site URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
-      format: {
-        comments: false  // Remove comments
-      }
     },
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          // Create a separate chunk for `three-stdlib` to avoid issues with minification
-          if (id.includes('three-stdlib')) {
-            return 'three-stdlib';
-          }
-        }
-      }
-    }
-  }
+  },
+  build: {
+    outDir: 'dist',
+    chunkSizeWarningLimit: 1000,
+  },
 });
