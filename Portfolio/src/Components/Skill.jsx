@@ -1,23 +1,23 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import { OrbitControls } from '@react-three/drei';
-import '../Style/Skills.css'
-import * as THREE from 'three';
+import '../Style/Skills.css';
 
 const RotatingCube = ({ icon }) => {
   const meshRef = useRef();
-  const texture = useMemo(() => new THREE.TextureLoader().load(icon), [icon]);
+  const texture = useLoader(TextureLoader, icon);
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += 0.005;
-      meshRef.current.rotation.y += 0.005;
+      meshRef.current.rotation.x += 0.002;
+      meshRef.current.rotation.y += 0.002;
     }
   });
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[2.5, 2.5, 2.5]} />
+      <boxGeometry args={[2, 2, 2]} />
       {[...Array(6)].map((_, index) => (
         <meshBasicMaterial attachArray="material" key={index} map={texture} transparent={true} />
       ))}
@@ -26,16 +26,44 @@ const RotatingCube = ({ icon }) => {
 };
 
 const Skill = ({ name, icon }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const skillRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (skillRef.current) {
+      observer.observe(skillRef.current);
+    }
+
+    return () => {
+      if (skillRef.current) {
+        observer.unobserve(skillRef.current);
+      }
+    };
+  }, []);
+
   return (
-    
-    <div className="skill-container">
-      <div className="skill-animation" style={{ width: '200px', height: '200px' }}>
-        <Canvas>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-          <OrbitControls enableZoom={false} />
-          <RotatingCube icon={icon} />
-        </Canvas>
+    <div ref={skillRef} className="skill-container">
+      <div className="skill-animation" style={{ width: '150px', height: '150px' }}>
+        {isVisible && (
+          <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
+            <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 5] }}>
+              <ambientLight intensity={0.5} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <OrbitControls enableZoom={false} enablePan={false} />
+              <RotatingCube icon={icon} />
+            </Canvas>
+          </Suspense>
+        )}
       </div>
       <div className="skill-name">{name}</div>
     </div>

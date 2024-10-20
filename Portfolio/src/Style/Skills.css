@@ -39,6 +39,16 @@
     justify-content: center;
     gap: 20px;
   }
+  .skill-placeholder {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 14px;
+  }
   
   @media (max-width: 768px) {
     .skill-container {

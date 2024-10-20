@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import '../Style/Skills.css';
-import Skill from './Skill';
+
+const LazySkill = lazy(() => import('./Skill'));
 
 const SkillsSection = () => {
   const skills = [
@@ -15,8 +16,6 @@ const SkillsSection = () => {
     { name: "Git", icon: "/assets/git.png" },
     { name: "Figma", icon: "/assets/figma.png" },
     { name: "Power BI", icon: "/assets/powerBI.png" },
-
-    
   ];
 
   return (
@@ -24,7 +23,9 @@ const SkillsSection = () => {
       <h2 className="skills-heading">My Skills</h2>
       <div className="skills-container">
         {skills.map((skill, index) => (
-          <Skill key={index} name={skill.name} icon={skill.icon} />
+          <Suspense key={index} fallback={<div className="skill-placeholder">Loading...</div>}>
+            <LazySkill name={skill.name} icon={skill.icon} />
+          </Suspense>
         ))}
       </div>
     </section>
