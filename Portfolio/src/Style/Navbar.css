@@ -63,8 +63,20 @@
   }
   
   .menu-icon {
-    display: none;
-  }
+  width: 40px; /* Set your desired width */
+  height: 40px; /* Set your desired height */
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove any border */
+  display: inline-block; /* Ensure it behaves like an inline element */
+  cursor: pointer; /* Change cursor on hover */
+  position: relative; /* Positioning for pseudo-elements if needed */
+}
+
+/* Optional: Add styles for hover or active states */
+.menu-icon:hover {
+  opacity: 0.8; /* Slightly change opacity on hover */
+}
+
   
   @media screen and (max-width: 960px) {
     .navbar-container {
@@ -123,7 +135,7 @@
   }
   
   .menu-icon:hover {
-    background-color: rgba(11, 93, 99, 0.9);
+    background-color: rgba(16, 93, 97, 0.945);
   }
   
   .menu-icon .material-icons {
