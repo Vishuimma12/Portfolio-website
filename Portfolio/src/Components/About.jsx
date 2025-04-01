@@ -41,7 +41,7 @@ const About = () => {
 
       <div className="about-content">
         <div className="Profle-image">
-          <img src="https://i.ibb.co/0htsPWG/Whats-App-Image-2024-08-01-at-15-44-32-369b04ae.jpg" alt="Image"  />
+          <img src="/profile.jpeg" alt="Image"  />
         </div>
         <div className="about-text">
           <h3>I'm a <span className="job-titl">{displayedTitle}</span></h3>
